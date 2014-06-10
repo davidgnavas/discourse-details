@@ -2,7 +2,7 @@ function details(text) {
   return text.replace("[detail]", "<details>")
              .replace("[summary]", "<summary>")
              .replace("[/summary]", "</summary>")
--             .replace("[/detail]", "</details>")
+             .replace("[/detail]", "</details>")
 }
 
 Discourse.Dialect.postProcessText(function (text) {
