@@ -1,20 +1,9 @@
 function details(text) {
   var adjusted = "<details><summary>"
-    + srctext.replace(/.*\[details "(.*)"]\s*(.*)\s*\[\/details]/, "$1")
+    + text.replace(/.*\[details "(.*)"]\s*(.*)\s*\[\/details]/, "$1")
     + "</summary>"
-    + srctext.replace(/.*\[details "(.*)"]\s*(.*)\s*\[\/details]/, "$2")
+    + text.replace(/.*\[details "(.*)"]\s*(.*)\s*\[\/details]/, "$2")
     + "</details>";
-    
-    Discourse.Dialect.inlineBetween({
-  start: "[" + tag + "=",
-  stop: "[/" + tag + "]",
-  rawContents: true,
-  emitter: function(contents) {
-    var regexp = /^([^\]]+)\](.*)$/,
-        m = regexp.exec(contents);
-      if (m) { return emitter.call(this, m[1], m[2]); }
-  }
-});
 
  return adjusted;
   /*
@@ -33,4 +22,15 @@ Discourse.Dialect.postProcessText(function (text) {
     }
   }
   return text;
+});
+
+Discourse.Dialect.inlineBetween({
+  start: "[" + tag + "=",
+  stop: "[/" + tag + "]",
+  rawContents: true,
+  emitter: function(contents) {
+    var regexp = /^([^\]]+)\](.*)$/,
+        m = regexp.exec(contents);
+      if (m) { return emitter.call(this, m[1], m[2]); }
+  }
 });
