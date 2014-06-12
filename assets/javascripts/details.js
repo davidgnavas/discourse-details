@@ -5,6 +5,8 @@ function details(text) {
     + text.replace(/.*\[details "(.*)"]\s*(.*)\s*\[\/details]/, "$2")
     + "</details>";
     
+    // Remove all types of newlines   
+  adjusted.replace(/(\r\n|\n|\r)/gm,"");  
  return adjusted;
 }
 
