@@ -4,19 +4,7 @@ function details(text) {
     + "</summary>"
     + text.replace(/.*\[details "(.*)"]\s*(.*)\s*\[\/details]/, "$2")
     + "</details>";
-
-Discourse.Dialect.inlineBetween({
-  start: "[" + tag + "=",
-  stop: "[/" + tag + "]",
-  rawContents: true,
-  emitter: function(contents) {
-    var regexp = /^([^\]]+)\](.*)$/,
-        m = regexp.exec(contents);
-      if (m) { return emitter.call(this, m[1], m[2]); }
-  }
-});
-
-
+    
  return adjusted;
   /*
   return text.replace("[detail]", "<details>")
