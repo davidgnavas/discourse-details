@@ -6,8 +6,9 @@ function details(text) {
     + "</details>";
 
     // Process BBcodes
-    Discourse.Dialect.cook(/.*\[details ".*"]\s*(.*)\s*\[\/details]/, {});
-
+    re = /.*\[details ".*"]\s*(.*)\s*\[\/details]/;
+    Discourse.Dialect.cook(re.exec(text), {});
+    
     // Remove all types of newlines   
   adjusted.replace(/(\r\n|\n|\r)/gm, " ");  
  return adjusted;
