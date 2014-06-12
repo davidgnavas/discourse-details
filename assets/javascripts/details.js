@@ -4,10 +4,6 @@ function details(text) {
     + "</summary>"
     + text.replace(/.*\[details "(.*)"]\s*(.*)\s*\[\/details]/, "$2")
     + "</details>";
-
-    // Process BBcodes
-    re = /.*\[details ".*"]\s*(.*)\s*\[\/details]/;
-    Discourse.Dialect.cook(re.exec(text), {});
     
     // Remove all types of newlines   
   adjusted.replace(/(\r\n|\n|\r)/gm, " ");  
