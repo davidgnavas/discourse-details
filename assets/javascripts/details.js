@@ -5,6 +5,9 @@ function details(text) {
     + text.replace(/.*\[details "(.*)"]\s*(.*)\s*\[\/details]/, "$2")
     + "</details>";
     
+    // Replace BBcode?
+    replaceBBCode('b', function(contents) { return ['span', {'class': 'bbcode-b'}].concat(contents); });
+    
     // Remove all types of newlines   
   adjusted.replace(/(\r\n|\n|\r)/gm,"");  
  return adjusted;
