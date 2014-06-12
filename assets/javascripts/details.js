@@ -6,12 +6,6 @@ function details(text) {
     + "</details>";
     
  return adjusted;
-  /*
-  return text.replace("[detail]", "<details>")
-             .replace("[summary]", "<summary>")
-             .replace("[/summary]", "</summary>")
-             .replace("[/detail]", "</details>");
-             */
 }
 
 Discourse.Dialect.postProcessText(function (text) {
