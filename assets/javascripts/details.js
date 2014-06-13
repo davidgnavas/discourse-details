@@ -1,11 +1,11 @@
 function details(text) {
-  if (text.indexOf("[details") > -1); {
+  //if (text.indexOf("[details") > -1) {
       var adjusted = "<details><summary>"
     + text.replace(/.*\[details "(.*)"]\s*(.*)\s*\[\/details]/, "$1")
     + "</summary>"
     + text.replace(/.*\[details "(.*)"]\s*(.*)\s*\[\/details]/, "$2")
     + "</details>";
-  }
+  //}
 
   // Remove all types of newlines   
   //adjusted.replace(/(\r\n|\n|\r)/gm, " ");  
