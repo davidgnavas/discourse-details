@@ -1,8 +1,7 @@
 function details(text) {
   var re = /\[details "(.*)"]\s*(.*)\s*\[\/details]/;
   var adjusted = text.replace(re, "<details><summary>" + "$1" + "</summary>" + "$2" + "</details>");
-
- return adjusted;
+  return adjusted;
 }
 
 Discourse.Dialect.postProcessText(function (text) {
