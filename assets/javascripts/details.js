@@ -1,5 +1,5 @@
 function details(text) {
-  var re = /\[head:([a-zA-Z0-9]+)]/;
+  var re = /\[details "(.*)"]\s*(.*)\s*\[\/details]/;
   var adjusted = text.replace(re, "<details><summary>" + "$1" + "</summary>" + "$2" + "</details>");
 
  return adjusted;
