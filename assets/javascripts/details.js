@@ -1,14 +1,7 @@
 function details(text) {
-  //if (text.indexOf("[details") > -1) {
-      var adjusted = "<details><summary>"
-    + text.replace(/.*\[details "(.*)"]\s*(.*)\s*\[\/details]/, "$1")
-    + "</summary>"
-    + text.replace(/.*\[details "(.*)"]\s*(.*)\s*\[\/details]/, "$2")
-    + "</details>";
-  //}
+  var re = /\[head:([a-zA-Z0-9]+)]/;
+  var adjusted = text.replace(re, "<details><summary>" + "$1" + "</summary>" + "$2" + "</details>");
 
-  // Remove all types of newlines   
-  //adjusted.replace(/(\r\n|\n|\r)/gm, " ");  
  return adjusted;
 }
 
