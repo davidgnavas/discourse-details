@@ -5,14 +5,14 @@ function details(text) {
     + text.replace(/.*\[details "(.*)"]\s*(.*)\s*\[\/details]/, "$2")
     + "</details>";
     
+    replaceBBCodeParams("expand", function(param, contents) {
+  return ['details', ['summary', this.processInline(param)]].concat(contents);
+}, false);
+
     // Remove all types of newlines   
   adjusted.replace(/(\r\n|\n|\r)/gm, " ");  
  return adjusted;
 }
-
-replaceBBCodeParams("expand", function(param, contents) {
-  return ['details', ['summary', this.processInline(param)]].concat(contents);
-}, false);
 
 Discourse.Dialect.postProcessText(function (text) {
   text = [].concat(text);
