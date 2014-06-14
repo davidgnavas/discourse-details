@@ -3,10 +3,7 @@ function details(text) {
   var re = /\[details "(.*)"]\s*(.*)\s*\[\/details]/;
   // Adjust text.
   var adjusted = text.replace(re, "<details><summary>" + "$1" + "</summary>" + "$2" + "</details>");
-  
-  // Cook inner text (convert to HTML)
-  Discourse.Dialect.cook(text, opts);
-  
+
   return adjusted;
 }
 
