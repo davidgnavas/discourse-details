@@ -7,10 +7,6 @@ function details(text) {
   return adjusted;
 }
 
-      replaceBBCodeParams("expand", function(param, contents) { 
-        return ['details', ['summary', this.processInline(param)]].concat(contents); 
-      }, false);
-
 Discourse.Dialect.postProcessText(function (text) {
   text = [].concat(text);
   for (var i = 0; i < text.length; i++) {
