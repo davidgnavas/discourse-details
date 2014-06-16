@@ -19,6 +19,7 @@ Discourse.Dialect.postProcessText(function (text) {
       //text[i] = details(text[i]);
     }
   }
+  replaceDetails(textBlock);
   return text;
 });
 
