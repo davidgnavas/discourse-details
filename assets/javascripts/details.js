@@ -7,13 +7,15 @@ function details(text) {
 
   return adjusted;
 }
+*/
 
+/*
 Discourse.Dialect.postProcessText(function (text) {
   text = [].concat(text);
   for (var i = 0; i < text.length; i++) {
-    //if (text[i].length > 0 && text[i][0] !== "<") {
-      text[i] = details(text[i]);
-    //}
+    if (text[i].length > 0 && text[i][0] !== "<") {
+      //text[i] = details(text[i]);
+    }
   }
   return text;
 });
@@ -30,4 +32,12 @@ Discourse.Dialect.inlineBetween({
 });
 */
 
-replaceBBCode('details', function(contents) { return ['details', /*{'class': 'bbcode-b'}*/].concat(contents); });
+      Discourse.Dialect.replaceBlock({
+        start: '[details]'
+        stop: '[/details]',
+        rawContents: true,
+
+        emitter: function(blockContents) {
+          return ['p', ['pre'].concat(blockContents.join("\n"))];
+        }
+      });
