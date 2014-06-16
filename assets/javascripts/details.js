@@ -1,3 +1,4 @@
+/*
 function details(text) {
   //Expression to find.
   var re = /\[details "(.*)"]\s*(.*)\s*\[\/details]/;
@@ -15,4 +16,9 @@ Discourse.Dialect.postProcessText(function (text) {
     //}
   }
   return text;
+});
+*/
+
+Discourse.Dialect.inlineReplace('[details]', function (text) {
+    return ['details', {src: 'text'}];
 });
