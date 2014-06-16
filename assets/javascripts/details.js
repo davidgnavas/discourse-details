@@ -41,7 +41,7 @@ Discourse.Dialect.inlineBetween({
         rawContents: false,
 
         emitter: function(block) {
-          return ['p', ['pre'].concat(block.join("\n"))];
+          return ['details', ['p'].concat(block.join("\n"))];
         }
       });
 /*
