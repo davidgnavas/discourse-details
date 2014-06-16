@@ -30,6 +30,6 @@ Discourse.Dialect.inlineBetween({
     stop: "[/details]",
     rawContents: false,
     emitter: function (contents) {
-        return '<details><summary>Test</summary>' + contents + '</details>';
+        return "<details><summary>Test</summary>" + contents + "</details>";
     }
 });
