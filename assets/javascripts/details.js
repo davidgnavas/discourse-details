@@ -19,6 +19,17 @@ Discourse.Dialect.postProcessText(function (text) {
 });
 */
 
+/*
 Discourse.Dialect.inlineReplace('[details]', function (text) {
     return ['details', {src: 'text'}];
+});
+*/
+
+Discourse.Dialect.inlineBetween({
+    start: '[details]',
+    stop: '[/details]')',
+    rawContents: false,
+    emitter: function (contents) {
+        return '<details><summary>Test</summary>' + contents + '</details>';
+    }
 });
