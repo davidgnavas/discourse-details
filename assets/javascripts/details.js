@@ -19,7 +19,6 @@ Discourse.Dialect.postProcessText(function (text) {
 });
 */
 
-/*
 Discourse.Dialect.inlineBetween({
     start: "[details]",
     stop: "[/details]",
@@ -28,4 +27,3 @@ Discourse.Dialect.inlineBetween({
         return "<details><summary>Test</summary>" + contents + "</details>";
     }
 });
-*/
