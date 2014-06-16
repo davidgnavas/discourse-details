@@ -27,7 +27,7 @@ Discourse.Dialect.inlineReplace('[details]', function (text) {
 
 Discourse.Dialect.inlineBetween({
     start: '[details]',
-    stop: '[/details]')',
+    stop: '[/details]'),
     rawContents: false,
     emitter: function (contents) {
         return '<details><summary>Test</summary>' + contents + '</details>';
