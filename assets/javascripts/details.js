@@ -29,11 +29,3 @@ Discourse.Dialect.inlineBetween({
     }
 });
 */
-
-  Discourse.Dialect.inlineReplace("[details]", function(text, match, prev){
-    return ["details"];
-  });
-  
-    Discourse.Dialect.inlineReplace("[/details]", function(text, match, prev){
-    return ["details"}];
-  });
