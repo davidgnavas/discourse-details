@@ -9,7 +9,7 @@ function details(text) {
 }
 */
 
-
+/*
 Discourse.Dialect.postProcessText(function (text) {
   var textBlock = "";
   text = [].concat(text);
@@ -22,7 +22,7 @@ Discourse.Dialect.postProcessText(function (text) {
   replaceDetails(textBlock);
   return text;
 });
-
+*/
 
 /*
 Discourse.Dialect.inlineBetween({
@@ -35,9 +35,8 @@ Discourse.Dialect.inlineBetween({
 });
 */
 
-function replaceDetails(block) {
         Discourse.Dialect.replaceBlock({
-        start: '[details]'
+        start: '[details]',
         stop: '[/details]',
         rawContents: false,
 
@@ -45,4 +44,7 @@ function replaceDetails(block) {
           return ['p', ['pre'].concat(block.join("\n"))];
         }
       });
+/*
+function replaceDetails(block) {
 }
+*/
