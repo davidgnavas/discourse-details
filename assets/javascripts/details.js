@@ -24,11 +24,12 @@ Discourse.Dialect.postProcessText(function (text) {
 });
 */
 
-Discourse.Dialect.inlineBetween({
-    start: "[details]",
-    stop: "[/details]",
-    rawContents: false,
-    emitter: function (contents) {
-        return "<details><summary>Test</summary>" + contents + "</details>";
-    }
+Discourse.Dialect.replaceBlock({
+  start: '[details]',
+  stop: '[/details]',
+  rawContents: false,
+
+  emitter: function(blockContents) {
+    return ['details'].concat(blockContents.join("\n"));
+  }
 });
