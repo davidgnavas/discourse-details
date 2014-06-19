@@ -23,7 +23,7 @@ Discourse.Dialect.postProcessText(function (text) {
   return text;
 });
 */
-
+/*
 Discourse.Dialect.replaceBlock({
   start: '[details]',
   stop: '[/details]',
@@ -33,3 +33,5 @@ Discourse.Dialect.replaceBlock({
     return ['details'].concat(blockContents.join("\n"));
   }
 });
+*/
+replaceBBCode('details', function(contents) { return ['details'].concat(contents.join("\n")); });
