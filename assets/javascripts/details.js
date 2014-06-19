@@ -40,6 +40,6 @@ Discourse.Dialect.replaceBlock({
   rawContents: true,
 
   emitter: function(blockContents) {
-    return ['details', blockContents.join("\n"))];
+    return ['details', blockContents.join("\n"));
   }
 });
