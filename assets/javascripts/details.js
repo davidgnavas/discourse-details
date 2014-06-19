@@ -34,4 +34,12 @@ Discourse.Dialect.replaceBlock({
   }
 });
 */
-replaceBBCode('details', function(contents) { return ['details'].concat(contents.join("\n")); });
+Discourse.Dialect.replaceBlock({
+  start: /(\[details\])([\s\S]*)/igm,
+  stop: '[/details]',
+  rawContents: true,
+
+  emitter: function(blockContents) {
+    return ['details', blockContents.join("\n"))];
+  }
+});
