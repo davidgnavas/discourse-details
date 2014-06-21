@@ -34,6 +34,8 @@ Discourse.Dialect.replaceBlock({
   }
 });
 */
+
+/*
 Discourse.Dialect.replaceBlock({
   start: /(\[details\])([\s\S]*)/igm,
   stop: '[/details]',
@@ -43,3 +45,4 @@ Discourse.Dialect.replaceBlock({
     return ['details', blockContents.join("\n"));
   }
 });
+*/
