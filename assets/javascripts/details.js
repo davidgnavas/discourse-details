@@ -44,3 +44,13 @@ Discourse.Dialect.replaceBlock({
     return ['details', blockContents.join("\n")];
   }
 });
+
+Discourse.Dialect.replaceBlock({
+  start: /(\[summary\])([\s\S]*)/igm,
+  stop: '[/summary]',
+  rawContents: true,
+
+  emitter: function(blockContents) {
+    return ['summary', blockContents.join("\n")];
+  }
+});
