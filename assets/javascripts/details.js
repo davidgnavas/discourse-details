@@ -23,17 +23,6 @@ Discourse.Dialect.postProcessText(function (text) {
   return text;
 });
 */
-/*
-Discourse.Dialect.replaceBlock({
-  start: '[details]',
-  stop: '[/details]',
-  rawContents: false,
-
-  emitter: function(blockContents) {
-    return ['details'].concat(blockContents.join("\n"));
-  }
-});
-*/
 
 Discourse.Dialect.replaceBlock({
   start: /(\[details\])([\s\S]*)/igm,
