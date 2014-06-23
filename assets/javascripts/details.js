@@ -35,11 +35,20 @@ Discourse.Dialect.replaceBlock({
 });
 */
 
-    Discourse.Dialect.replaceBlock({
-      start: /(\[details\])([\s\S]*)/igm,
-      stop: '[/details]',
+Discourse.Dialect.replaceBlock({
+  start: /(\[details\])([\s\S]*)/igm,
+  stop: '[/details]',
 
-      emitter: function(blockContents) {
-        return ['details'].concat(this.processInline(blockContents));
-      }
-    });
+  emitter: function(blockContents) {
+    return ['details'].concat(this.processInline(blockContents));
+  }
+});
+
+Discourse.Dialect.replaceBlock({
+  start: /(\[summary\])([\s\S]*)/igm,
+  stop: '[/summary]',
+
+  emitter: function(blockContents) {
+    return ['summary'].concat(this.processInline(blockContents));
+  }
+});
