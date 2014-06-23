@@ -35,22 +35,11 @@ Discourse.Dialect.replaceBlock({
 });
 */
 
-Discourse.Dialect.replaceBlock({
-  start: /(\[details\])([\s\S]*)/igm,
-  stop: '[/details]',
-  rawContents: false,
+    Discourse.Dialect.replaceBlock({
+      start: /(\[details\])([\s\S]*)/igm,
+      stop: '[/details]',
 
-  emitter: function(blockContents) {
-    return ['details', blockContents.join("\n")];
-  }
-});
-
-Discourse.Dialect.replaceBlock({
-  start: /(\[summary\])([\s\S]*)/igm,
-  stop: '[/summary]',
-  rawContents: false,
-
-  emitter: function(blockContents) {
-    return ['summary', blockContents.join("\n")];
-  }
-});
+      emitter: function(blockContents) {
+        return ['details'].concat(this.processInline(blockContents));
+      }
+    });
