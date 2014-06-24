@@ -29,7 +29,15 @@ Discourse.Dialect.replaceBlock({
   stop: '[/details]',
 
   emitter: function(blockContents) {
-    return ['details'].concat(this.processInline(blockContents
-    .replace("[summary]", "<summary>").replace("[/summary]", "</summary>")));
+    return ['details'].concat(this.processInline(blockContents));
+  }
+});
+
+Discourse.Dialect.replaceBlock({
+  start: /(\[summary\])([\s\S]*)/igm,
+  stop: '[/summary]',
+
+  emitter: function(blockContents) {
+    return ['summary'].concat(this.processInline(blockContents));
   }
 });
