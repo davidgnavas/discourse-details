@@ -1,4 +1,4 @@
-var tag = "details"
+var tag = "details";
 
 (function () {
   
