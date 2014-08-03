@@ -1,8 +1,10 @@
+var tag "details"
+
 (function () {
   
     Discourse.Dialect.inlineBetween({
-        start: "[details=",
-        stop:  "[/details]",
+        start: "[" + tag + "=",
+        stop:  "[/" + tag + "]",
         rawContents: true,
         emitter: function(contents) {
             var matches = contents.match(/(.+)]([\s\S]*)/);
